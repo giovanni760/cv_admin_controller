@@ -4,7 +4,7 @@
 :root {
   --blue-light: #dceeff;
   --text-blue: #083b5c;
-  --transparent-box: rgba(8, 84, 141, 0.5); /* Fondo translúcido azul */
+  --transparent-box: rgba(8, 84, 141, 0.5);
   --border-blue: rgba(144, 190, 235, 0.3);
   --hover-blue: #1a75d2;
   --font-family: 'Raleway', Arial, sans-serif;
@@ -19,11 +19,16 @@
 
 /* Fondo general */
 body {
-  background-color: var(--blue-light);
+  background-image: url('assets/gradii-1920x1080.png');
+  background-size: cover;           
+  background-repeat: no-repeat;     
+  background-position: center;      
+  min-height: 100vh;                
   font-family: var(--font-family);
   color: var(--text-blue);
   padding: 2em;
 }
+
 
 /* Menú de navegación */
 nav ul {
@@ -36,7 +41,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: var(--text-blue);
+  color: rgba(146, 146, 252, 0.877);
   font-size: 1.2em;
   text-decoration: none;
   font-weight: 600;
@@ -53,7 +58,7 @@ nav ul li a:hover {
   margin: 0 auto 2em;
   padding: 2em;
   border-radius: 15px;
-  background-color: rgba(0, 56, 168, 0.2);
+  background-color: rgba(0, 56, 168, 0.603);
   backdrop-filter: blur(8px);              
   border: 1px solid rgba(0, 56, 168, 0.3);  
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -141,7 +146,7 @@ color: white;
   font-size: 1em;
   margin-bottom: 1em;
   padding: 1em;
-  background: rgba(51, 118, 243, 0.308);
+  background: rgba(81, 139, 247, 0.616);
   border: 1px solid rgba(108, 108, 255, 0.425);
   border-radius: 8px;
   color: var(--text-blue);
@@ -183,12 +188,13 @@ nav ul li a {
   font-size: 1.3em;         
   font-weight: 600;
   text-decoration: none;
-  color: #0b3c91;           
+  color: #4d8af3;           
   transition: color 0.3s;
+ 
 }
 
 nav ul li a:hover {
-  color: #0056d2;           
+  color:  #0b4ab8;           
   text-decoration: underline;
 }
 
@@ -196,7 +202,7 @@ nav ul li a:hover {
 h3 {
   font-size: 2em;          
   font-weight: bold;
-  color: #0b3c91;
+  color: #4b89f5;
   margin-bottom: 0.5em;
   text-align: center;       
 }
