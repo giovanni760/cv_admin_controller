@@ -1,24 +1,202 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 
+:root {
+  --blue-light: #dceeff;
+  --text-blue: #083b5c;
+  --transparent-box: rgba(8, 84, 141, 0.5); /* Fondo translúcido azul */
+  --border-blue: rgba(144, 190, 235, 0.3);
+  --hover-blue: #1a75d2;
+  --font-family: 'Raleway', Arial, sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo general */
 body {
-  background: #2E9ce6;
-  padding: 3em;
-  font-family: 'Raleway', 'Arial';
-  color: #fff; }
+  background-color: var(--blue-light);
+  font-family: var(--font-family);
+  color: var(--text-blue);
+  padding: 2em;
+}
 
-ul {
-  list-style-type: none;
-  margin: 0 0 2em 0;
-  padding: 0; }
+/* Menú de navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 2em;
+  padding: 0;
+}
 
-ul li {
-  display: inline;
-  margin-right: 30px; }
+nav ul li a {
+  color: var(--text-blue);
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-ul li a {
-  font-size: 1.5em; }
+nav ul li a:hover {
+  text-decoration: underline;
+}
 
-a {
-  color: #fff;
-  text-decoration: none;  }
+/* Contenedor principal con efecto translúcido */
+.container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 2em;
+  padding: 2em;
+  border-radius: 15px;
+  background-color: rgba(0, 56, 168, 0.2);
+  backdrop-filter: blur(8px);              
+  border: 1px solid rgba(0, 56, 168, 0.3);  
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+/* Contendor donde va */
+
+.containers {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 2em;
+  padding: 2em;
+  border-radius: 15px;
+  background-color: rgba(217, 227, 247, 0.486);
+  backdrop-filter: blur(8px);              
+  border: 1px solid rgba(0, 56, 168, 0.986);  
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.226);
+}
+
+/* Columnas dentro del container */
+.col {
+  margin-bottom: 1.5em;
+}
+
+
+.col p {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+/* Título */
+.col h2 {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-blue);
+}
+
+/* Inputs */
+.txt {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  border: 1px solid var(--border-blue);
+  border-radius: 6px;
+  color: var(--text-blue);
+  background: rgb(255, 255, 255);
+}
+
+input.txt:focus {
+  transform: translateY(-5px); 
+  color: #0056d2;
+  border-color: #0056d2;
+  outline: none;
+}
+/* Botones */
+.btn {
+  background-color: rgba(2, 2, 240, 0.61);
+  color: var(--blue-light);
+  border: none;
+  padding: 10px 15px;
+  margin: 5px 5px 10px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: var(--hover-blue);
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: rgba(211, 47, 47, 0.8);
+  color: white;
+}
+.btn-green:hover{
+  background-color: rgb(9, 221, 9, 0.8);
+color: white;
+}
+
+
+/* Tarjetas con los datos renderizados */
+.life-container {
+  font-size: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  background: rgba(51, 118, 243, 0.308);
+  border: 1px solid rgba(108, 108, 255, 0.425);
+  border-radius: 8px;
+  color: var(--text-blue);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 1em;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 1em;
+  }
+}
+
+/* Estilo general del nav */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 1em 0;
+  flex-wrap: wrap;
+}
+
+/* Estilo para los enlaces */
+nav ul li a {
+  font-size: 1.3em;         
+  font-weight: 600;
+  text-decoration: none;
+  color: #0b3c91;           
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #0056d2;           
+  text-decoration: underline;
+}
+
+/* Estilo del título */
+h3 {
+  font-size: 2em;          
+  font-weight: bold;
+  color: #0b3c91;
+  margin-bottom: 0.5em;
+  text-align: center;       
+}
