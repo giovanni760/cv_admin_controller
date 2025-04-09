@@ -108,12 +108,12 @@ nav ul li a:hover {
   background: rgb(255, 255, 255);
 }
 
-input.txt:focus {
+/*input.txt:focus {
   transform: translateY(-5px); 
   color: #0056d2;
   border-color: #0056d2;
   outline: none;
-}
+}*/
 /* Botones */
 .btn {
   background-color: rgba(2, 2, 240, 0.61);
