@@ -49,7 +49,14 @@ export class AdminEducationComponent {
     this.myEducation = { ...job }; // Llenamos el formulario
 //    this.btnTxt = "Actualizar";
   }
-
+  deleteJob(id?: string) {
+    const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este registro?');
+    if (confirmacion && id) {
+      this.educationService.deleteEducation(id);
+      if (this.selectedId === id) this.resetForm();
+    }
+  }
+/*
   deleteJob(id?: string) {
     this.educationService.deleteEducation(id).then(() => {
       console.log('Item eliminado correctamente');
@@ -57,7 +64,7 @@ export class AdminEducationComponent {
         this.resetForm();
       }
     });
-  }
+  }*/
       resetForm() {
     this.myEducation = new Education();
     this.selectedId = null;

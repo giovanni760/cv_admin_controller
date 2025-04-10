@@ -50,13 +50,21 @@ export class AdminLanguagesComponent {
   }
 
   deleteJob(id?: string) {
+    const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este registro?');
+    if (confirmacion && id) {
+      this.languagesService.deleteLanguages(id);
+      if (this.selectedId === id) this.resetForm();
+    }
+  }
+
+ /* deleteJob(id?: string) {
     this.languagesService.deleteLanguages(id).then(() => {
       console.log('Item eliminado correctamente');
       if (id === this.selectedId) {
         this.resetForm();
       }
     });
-  }
+  }*/
     resetForm() {
     this.myLanguages = new Languages();
     this.selectedId = null;

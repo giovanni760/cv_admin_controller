@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="container color-light">
+<div class="double-box-container container color-light">
   <div class="col">
     <form>
       <input type="text" class="txt" name="skills" placeholder="add skills" [(ngModel)]="mySkills.skills"><br>
@@ -13,11 +13,11 @@
       <input type="submit" class="btn btn-green" value="{{ btnTxt }}" (click)="AgregarJob()">
     </form>
   </div>
-  <div class="col">
+  <div class="list-box">
     <p class="life-container" *ngFor="let job of skills;">
       <input type="submit" class="btn btn-green" value="update" (click)='updateSkill(job.id)'>
     <input type="submit" class="btn btn-delete" value="delete" (click)='deleteJob(job.id)'>
-      {{ job.skills }} 
+    <span class = "job-text">  {{ job.skills }} </span>
     </p>
   </div>
 </div>

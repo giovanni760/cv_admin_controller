@@ -5,8 +5,8 @@
  </div>
 </div>
 
-<div class="container color-light">
-  <div class="col">
+<div class="double-box-container container color-light">
+  <div class="form-box">
     <form (ngSubmit)="AgregarJob()">
       <input type="text" class="txt" name="startDate" placeholder="start date (mm/yyyy)" [(ngModel)]="myWorkExperience.startDate"><br>
       <input type="text" class="txt" name="endDate" placeholder="end date (mm/yyyy)" [(ngModel)]="myWorkExperience.endDate"><br>
@@ -19,11 +19,11 @@
     </form>
   </div>
 
-  <div class="col">
+  <div class="list-box">
     <p class="life-container" *ngFor="let job of workExperience;">
       <input type="submit" class="btn btn-green" value="Update" (click)='editJob(job)'>
       <input type="submit" class="btn btn-delete" value="Delete" (click)='deleteJob(job.id)'>
-      {{ job.company }} - {{ job.position }}
+      <span class = "job-text">  {{ job.company }} - {{ job.position }} </span>
     </p>
   </div>
 </div>

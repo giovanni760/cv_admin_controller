@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="container color-light">
+<div class="double-box-container container color-light">
   <div class="col">
     <form (ngSubmit)="AgregarJob()">
       <input type="text" class="txt" name="languages" placeholder="add language" [(ngModel)]="myLanguages.name"><br>
@@ -14,11 +14,11 @@
       <input type="submit" class="btn btn-green" [value]=" btnTxt ">
     </form>
   </div>
-  <div class="col">
+  <div class="list-box">
     <p class="life-container" *ngFor="let job of languages;">
       <input type="submit" class="btn btn-green" value="update" (click)='editJob(job)'>
     <input type="submit" class="btn btn-delete" value="delete" (click)='deleteJob(job.id)'>
-    {{ job.name }} - {{ job.level  }}
+    <span class = "job-text">  {{ job.name }} - {{ job.level  }} </span>
     </p>
   </div>
 </div>

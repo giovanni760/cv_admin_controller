@@ -38,13 +38,20 @@ AgregarJob(){
  });
  this.resetForm();
 }
-
+deleteJob(id?: string) {
+  const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este registro?');
+  if (confirmacion && id) {
+    this.interestsService.deleteInterests(id);
+    if (this.selectedId === id) this.resetForm();
+  }
+}
+/*
 deleteJob(id? :string){
         this.interestsService.deleteInterests(id).then(() => {
         console.log('delete item successfully!');
         });
         console.log(id);
-}
+}*/
   updateJob(id?: string) {
     this.interestsService.updateInterests(this.myInterests, id).then(() => {
       console.log('update item successfully');

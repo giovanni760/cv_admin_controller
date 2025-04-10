@@ -58,23 +58,22 @@ nav ul li a:hover {
   margin: 0 auto 2em;
   padding: 2em;
   border-radius: 15px;
-  background-color: rgba(0, 56, 168, 0.603);
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);              
-  border: 1px solid rgba(0, 56, 168, 0.3);  
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 56, 168, 0.555);  
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.541);
 }
 /* Contendor donde va */
 
 .containers {
-  width: 100%;
-  max-width: 650px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde suave */
+  border-radius: 20px;
+  padding: 1.5em 2em;
   margin: 0 auto 2em;
-  padding: 2em;
-  border-radius: 15px;
-  background-color: rgba(217, 227, 247, 0.486);
-  backdrop-filter: blur(8px);              
-  border: 1px solid rgba(0, 56, 168, 0.986);  
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.226);
+  max-width: 700px;
+  backdrop-filter: blur(10px); /* Desenfoque de fondo */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.603);
 }
 
 /* Columnas dentro del container */
@@ -93,7 +92,7 @@ nav ul li a:hover {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
-  color: var(--text-blue);
+  color: rgb(140, 140, 240);
 }
 
 /* Inputs */
@@ -108,12 +107,12 @@ nav ul li a:hover {
   background: rgb(255, 255, 255);
 }
 
-/*input.txt:focus {
+input.txt:focus {
   transform: translateY(-5px); 
   color: #0056d2;
   border-color: #0056d2;
   outline: none;
-}*/
+}
 /* Botones */
 .btn {
   background-color: rgba(2, 2, 240, 0.61);
@@ -138,6 +137,11 @@ nav ul li a:hover {
 .btn-green:hover{
   background-color: rgb(9, 221, 9, 0.8);
 color: white;
+}
+
+input.btn:focus {
+  transform: translateY(-2.5px); 
+  outline: none;
 }
 
 
@@ -185,7 +189,7 @@ nav ul {
 
 /* Estilo para los enlaces */
 nav ul li a {
-  font-size: 1.3em;         
+  font-size: 1.8em;         
   font-weight: 600;
   text-decoration: none;
   color: #4d8af3;           
@@ -200,9 +204,60 @@ nav ul li a:hover {
 
 /* Estilo del título */
 h3 {
-  font-size: 2em;          
+  font-size: 2.5em;          
   font-weight: bold;
-  color: #4b89f5;
+  color: #5d99ff;
   margin-bottom: 0.5em;
   text-align: center;       
+}
+
+.nav-box {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde suave */
+  border-radius: 15px;
+  padding: 1.5em 2em;
+  margin: 0 auto 2em;
+  max-width: 1000px;
+  backdrop-filter: blur(10px); /* Desenfoque de fondo */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.397);
+}
+nav {
+  width: 100%;
+  background-color: rgba(2, 47, 136, 0.829); /* color del recuadro */
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2em;
+}
+nav ul {
+  justify-content: center;
+}
+
+.double-box-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-box,
+.list-box {
+  flex: 1;
+  min-width: 280px;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1.5em;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.job-text {
+  font-size: 20px;   
+  font-weight: 500;
+  margin-left: 8px; 
+  display: inline-block;
+  color:rgb(3, 3, 83);
 }

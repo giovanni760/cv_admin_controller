@@ -29,27 +29,41 @@ export class AdminHeaderComponent {
       console.log(this.header);
     });
   }
-AgregarJob() {
+  AgregarJob() {
     if (this.selectedId) {
       this.headerService.updateHeader(this.selectedId, this.myHeader)
         .then(() => {
           console.log('Item actualizado correctamente');
-         this.resetForm();
+          this.resetForm();
         });
     } else {
+     
+      if (this.header.length >= 1) {
+        return; 
+      }
+
       this.headerService.createHeader(this.myHeader).then(() => {
         console.log('Item creado correctamente');
-       this.resetForm();
+        this.resetForm();
       });
     }
   }
+  
+  
 
   editJob(job: any) {
     this.selectedId = job.id;
     this.myHeader = { ...job };  
  //   this.btnTxt = "Actualizar";
   }
-
+  deleteJob(id?: string) {
+    const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este registro?');
+    if (confirmacion && id) {
+      this.headerService.deleteHeader(id);
+      if (this.selectedId === id) this.resetForm();
+    }
+  }
+/*
   deleteJob(id?: string) {
     this.headerService.deleteHeader(id).then(() => {
       console.log('Item eliminado correctamente');
@@ -57,7 +71,7 @@ AgregarJob() {
 //        this.resetForm();
       }
     });
-}
+}*/
 
   resetForm() {
     this.myHeader = new Header();
@@ -79,4 +93,18 @@ deleteJob(id? :string){
         });
         console.log(id);
 }*/
-
+/*
+AgregarJob() {
+  if (this.selectedId) {
+    this.headerService.updateHeader(this.selectedId, this.myHeader)
+      .then(() => {
+        console.log('Item actualizado correctamente');
+       this.resetForm();
+      });
+  } else {
+    this.headerService.createHeader(this.myHeader).then(() => {
+      console.log('Item creado correctamente');
+     this.resetForm();
+    });
+  }
+}*/

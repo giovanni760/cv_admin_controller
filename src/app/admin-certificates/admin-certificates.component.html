@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="container color-light">
+<div class="double-box-container container color-light">
   <div class="col">
     <form (ngSubmit)="AgregarJob()">
       <input type="text" class="txt" name="certificate" placeholder="add certificates" [(ngModel)]="myCertificates.certificate"><br>
@@ -16,11 +16,11 @@
       <input type="submit" class="btn btn-green" [value]=" btnTxt ">
     </form>
   </div>
-  <div class="col">
+  <div class="list-box">
     <p class="life-container" *ngFor="let job of certificates;">
       <input type="submit" class="btn btn-green" value="update" (click)='editJob(job)'>
     <input type="submit" class="btn btn-delete" value="delete" (click)='deleteJob(job.id)'>
-    {{ job.certificate }} - {{ job.Accomplished }} - {{ job.year  }}
+    <span class = "job-text">  {{ job.certificate }} - {{ job.Accomplished }} - {{ job.year  }} </span>
     </p>
   </div>
 </div>

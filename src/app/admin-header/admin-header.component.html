@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div class="container color-light">
+<div class="double-box-container container color-light">
   <div class="col">
     <form>
       <input type="text" class="txt" name="name" placeholder="your name" [(ngModel)]="myHeader.name"><br>
@@ -19,11 +19,11 @@
       <input type="submit" class="btn btn-green" value="{{ btnTxt }}" (click)="AgregarJob()">
     </form>
   </div>
-  <div class="col">
+  <div class="list-box">
     <p class="life-container" *ngFor="let job of header;">
       <input type="submit" class="btn btn-green" value="update" (click)='editJob(job)'>
     <input type="submit" class="btn btn-delete" value="delete" (click)='deleteJob(job.id)'>
-    {{ job.name }} - {{ job.email }} -  {{ job.goalLife  }} 
+    <span class = "job-text"> {{ job.name }} - {{ job.email }} -  {{ job.goalLife  }} </span>
     </p>
   </div>
 </div>

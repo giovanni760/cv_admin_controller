@@ -38,12 +38,19 @@ AgregarJob(){
  });
 }
 
-deleteJob(id? :string){
+deleteJob(id?: string) {
+  const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este registro?');
+  if (confirmacion && id) {
+    this.skillsService.deleteSkills(id);
+    if (this.selectedId === id) this.resetForm();
+  }
+}
+/*deleteJob(id? :string){
         this.skillsService.deleteSkills(id).then(() => {
         console.log('delete item successfully!');
         });
         console.log(id);
-}
+}*/
 updateSkill(id?: string) {
     this.skillsService.updateSkills(this.mySkills, id).then(() => {
       console.log('update item successfully');

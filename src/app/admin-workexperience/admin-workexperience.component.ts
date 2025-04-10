@@ -51,13 +51,13 @@ export class AdminWorkexperienceComponent {
   }
 
   deleteJob(id?: string) {
-    this.workExperienceService.deleteWorkExperience(id).then(() => {
-      console.log('Item eliminado correctamente');
-      if (id === this.selectedId) {
-        this.resetForm();
-      }
-    });
+    const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este registro?');
+    if (confirmacion && id) {
+      this.workExperienceService.deleteWorkExperience(id);
+      if (this.selectedId === id) this.resetForm();
+    }
   }
+  
 
   resetForm() {
     this.myWorkExperience = new WorkExperience();

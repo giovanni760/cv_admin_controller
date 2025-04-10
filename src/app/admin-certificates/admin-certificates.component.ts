@@ -49,7 +49,14 @@ AgregarJob() {
     this.myCertificates = { ...job }; // Llenamos el formulario
 //   this.btnTxt = "Actualizar";
   }
-
+  deleteJob(id?: string) {
+    const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este registro?');
+    if (confirmacion && id) {
+      this.certificatesService.deleteCertificates(id);
+      if (this.selectedId === id) this.resetForm();
+    }
+  }
+/*
   deleteJob(id?: string) {
     this.certificatesService.deleteCertificates(id).then(() => {
       console.log('Item eliminado correctamente');
@@ -57,7 +64,7 @@ AgregarJob() {
         this.resetForm();
       }
     });
-  }
+  }*/
       resetForm() {
     this.myCertificates = new Certificates();
     this.selectedId = null;
