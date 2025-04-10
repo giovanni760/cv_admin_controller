@@ -1,1 +1,31 @@
-<p>admin-header works!</p>
+<div class="containers color-dark">
+
+   <div class="col">
+    <h2>header items</h2>
+  </div>
+</div>
+
+<div class="double-box-container container color-light">
+  <div class="col">
+    <form>
+      <input type="text" class="txt" name="name" placeholder="your name" [(ngModel)]="myHeader.name"><br>
+      <input type="text" class="txt" name="location" placeholder="your location" [(ngModel)]="myHeader.location"><br>
+      <input type="text" class="txt" name="email" placeholder="email" [(ngModel)]="myHeader.email"><br>
+      <input type="text" class="txt" name="phoneNumber" placeholder="your phone number" [(ngModel)]="myHeader.phoneNumber"><br>
+      <input type="text" class="txt" name="goalLife" placeholder="life's goal" [(ngModel)]="myHeader.goalLife"><br>
+      <input type="text" class="txt" name="photoUrl" placeholder="your photo url" [(ngModel)]="myHeader.photoUrl"><br>
+      <input type="text" class="txt" name="socialNetwork" placeholder="your social network" [(ngModel)]="myHeader.socialNetwork"><br>
+
+      <input type="submit" class="btn btn-green" value="{{ btnTxt }}" (click)="AgregarJob()">
+    </form>
+  </div>
+  <div class="list-box">
+    <p class="life-container" *ngFor="let job of header;">
+      <input type="submit" class="btn btn-green" value="update" (click)='editJob(job)'>
+    <input type="submit" class="btn btn-delete" value="delete" (click)='deleteJob(job.id)'>
+    <span class = "job-text"> {{ job.name }} - {{ job.email }} -  {{ job.goalLife  }} </span>
+    </p>
+  </div>
+</div>
+
+
