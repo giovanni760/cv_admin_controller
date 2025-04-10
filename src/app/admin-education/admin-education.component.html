@@ -1,1 +1,25 @@
-<p>admin-education works!</p>
+<div class="containers color-dark">
+
+   <div class="col ">
+    <h2>Education items</h2>
+  </div>
+</div>
+
+<div class="double-box-container container color-light">
+  <div class="col ">
+    <form (ngSubmit)="AgregarJob()">
+      <input type="text" class="txt" name="carrera" placeholder="add carrera " [(ngModel)]="myEducation.carrera"><br>
+      <input type="text" class="txt" name="Accomplished" placeholder="add Accomplished" [(ngModel)]="myEducation.Accomplished"><br>
+      <input type="text" class="txt" name="years" placeholder="add years (yearStart-yearEnd) " [(ngModel)]="myEducation.years"><br>
+ 
+      <input type="submit" class="btn btn-green" [value]=" btnTxt ">
+    </form>
+  </div>
+  <div class="list-box">
+    <p class="life-container" *ngFor="let job of education;">
+      <input type="submit" class="btn btn-green" value="Update" (click)='editJob(job)'>
+    <input type="submit" class="btn btn-delete" value="delete" (click)='deleteJob(job.id)'>
+    <span class = "job-text"> {{ job.carrera }} - {{ job.Accomplished }}  {{ job.years  }} </span>
+    </p>
+  </div>
+</div>

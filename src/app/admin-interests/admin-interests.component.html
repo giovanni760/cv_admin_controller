@@ -1,1 +1,26 @@
-<p>admin-interests works!</p>
+<div class="containers color-dark">
+
+   <div class="col ">
+    <h2>interests items</h2>
+  </div>
+</div>
+
+<div class="double-box-container container color-light">
+  <div class="col">
+    <form>
+	<input type="text" class="txt" name="interest" placeholder="agregar interes" [(ngModel)]="myInterests.interest"><br>
+  
+	 <input type="submit" class="btn btn-green" value="{{ btnTxt }}" (click)="AgregarJob()">
+    </form>
+  </div>
+  <div class="list-box">
+    <p class="life-container" *ngFor="let job of interests;">
+      <input type="submit" class="btn btn-green" value="update" (click)='updateJob(job.id)'>
+   
+     <input type="submit" class="btn btn-delete" value="delete" (click)='deleteJob(job.id)'>
+     <span class = "job-text">  {{job.interest }} </span>
+    </p>
+  </div>
+</div>
+
+
